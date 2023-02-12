@@ -1,6 +1,6 @@
 # Data Exporter
 
-Este é o repositório privado do projeto Data Exporter. Este projeto visa automatizar a coleta e a exportação de dados importantes referentes a logs de atendimento, atividades de usuários no sistema e logs de chamadas de vídeo.
+Este é o repositório privado do projeto Data Exporter. Este projeto visa automatizar a coleta e a exportação de dados importantes referentes a logs de atendimento, chamadas de video e atividades de usuários.
 
 ## Funcionalidades
 
