@@ -1,6 +1,7 @@
 import json
 import requests
 
+
 class Central:
     def __init__(self, username, password, base_url):
         self.username = username
@@ -21,21 +22,22 @@ class Central:
             response.raise_for_status()
             self.auth = response.json()
         except requests.exceptions.HTTPError as error:
-            raise(f"Falha ao realizar login: {error}")
+            raise (f"Central de Requisições: Falha na requisição: {error}")
         except requests.exceptions.RequestException as error:
-            raise(f"Falha na conexão: {error}")
+            raise (f"Central de Requisições: Falha na conexão: {error}")
 
     def search_data(self, endpoint, start_date, end_date, page=1, callback=None):
         """Realiza a busca de dados a partir de uma determinada data e página."""
-        if not self.auth:
+        if self.auth is None:
             self.login()
 
         data = []
+
         while True:
             url = f"{endpoint}{start_date}/{end_date}/{page}"
             headers = {
                 "x-access-token": self.auth["accessToken"],
-                "_id": self.auth["user"]["id"],
+                "_id": self.auth["user"]["_id"],
             }
             try:
                 response = self.session.get(url, headers=headers)
@@ -48,21 +50,20 @@ class Central:
                     break
                 page += 1
             except requests.exceptions.HTTPError as error:
-                raise(f"Falha na requisição: {error}")
+                raise (f"Central de Requisições: Falha na requisição: {error}")
                 break
             except requests.exceptions.RequestException as error:
-                raise(f"Falha na conexão: {error}")
+                raise (f"Central de Requisições: Falha na conexão: {error}")
                 break
-            finally:
-                self.auth = None
+        self.auth = None
         return data
 
     def search_attendance_records(self, start_date, end_date, callback=None):
         """Realiza a busca de atividades a partir de uma determinada data."""
         endpoint = f"{self.base_url}/servico/adm/atividades/json/"
-        return self.search(endpoint, start_date, end_date)
+        return self.search_data(endpoint, start_date, end_date, callback=callback)
 
     def search_activity_records(self, start_date, end_date, callback=None):
         """Realiza a busca de histórico de atividades a partir de uma determinada data."""
         endpoint = f"{self.base_url}/servico/historico/downloadjson/"
-        return self.search(endpoint, start_date, end_date)
+        return self.search_data(endpoint, start_date, end_date, callback=callback)
