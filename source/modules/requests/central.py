@@ -60,10 +60,10 @@ class Central:
 
     def search_attendance_records(self, start_date, end_date, callback=None):
         """Realiza a busca de atividades a partir de uma determinada data."""
-        endpoint = f"{self.base_url}/servico/adm/atividades/json/"
+        endpoint = f"{self.base_url}/servico/historico/downloadjson/"
         return self.search_data(endpoint, start_date, end_date, callback=callback)
 
     def search_activity_records(self, start_date, end_date, callback=None):
         """Realiza a busca de histórico de atividades a partir de uma determinada data."""
-        endpoint = f"{self.base_url}/servico/historico/downloadjson/"
+        endpoint = f"{self.base_url}/servico/adm/atividades/json/"
         return self.search_data(endpoint, start_date, end_date, callback=callback)
