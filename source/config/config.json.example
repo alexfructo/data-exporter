@@ -1,0 +1,42 @@
+{
+    "application": {
+        "max_concurrent_requests": 10,
+        "max_period": 7
+    },
+    "endpoints": {
+        "url_base_central": "",
+        "url_base_portal": "",
+        "url_base_vonage": ""
+    },
+    "authentication": {
+        "vonage": {
+            "token": ""
+        },
+        "central": {
+            "username": "",
+            "password": ""
+        },
+        "portal": {
+            "username": "",
+            "password": ""
+        }
+    },
+    "database": {
+        "host": "",
+        "port": "",
+        "username": "",
+        "password": "",
+        "stage": {
+            "database": "",
+            "vonage_table": "",
+            "central_table": "",
+            "portal_table": ""
+        },
+        "production": {
+            "database": "",
+            "vonage_table": "",
+            "central_table": "",
+            "portal_table": ""
+        }
+    }
+}
