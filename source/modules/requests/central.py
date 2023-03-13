@@ -2,7 +2,7 @@ import json
 import requests
 
 
-class Central:
+class CentralRequest:
     def __init__(self, username, password, base_url):
         self.username = username
         self.password = password
