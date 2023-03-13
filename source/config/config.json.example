@@ -38,5 +38,25 @@
             "central_table": "",
             "portal_table": ""
         }
+    },
+    "data":{
+        "central":{
+            "attendance": {
+                "columns": {
+
+                },
+                "rename_columns": {
+
+                }
+            },
+            "activity": {
+                "columns": {
+
+                },
+                "rename_columns": {
+
+                }
+            }
+        }
     }
 }
