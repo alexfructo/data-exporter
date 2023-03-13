@@ -56,6 +56,36 @@ class Config:
                     "vonage_table": "",
                     "central_table": "",
                     "portal_table": ""
+                },
+                "data":{
+                    "central": {
+                        "attendance":{
+                            "columns":{
+            
+                            },
+                            "rename_cloumns":{
+            
+                            }
+                        },
+                        "activity":{
+                            "columns":{
+            
+                            },
+                            "rename_cloumns":{
+            
+                            }
+                        }
+                    },
+                    "portal":{
+                        "attendance":{
+                            "columns":{
+            
+                            },
+                            "rename_cloumns":{
+            
+                            }
+                        }
+                    }
                 }
             }
         }
