@@ -57,6 +57,16 @@
 
                 }
             }
+        },
+        "portal":{
+           "attendance": {
+                "columns": {
+
+                },
+                "rename_columns": {
+
+                }
+            } 
         }
     }
 }
