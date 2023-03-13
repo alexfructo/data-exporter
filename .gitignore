@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/venv,python,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv,python,windows
+## Visual Studio Code ##
+.vscode
+
+## Config File ##
+config.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
